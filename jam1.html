@@ -1,0 +1,25 @@
+
+<script language="javascript" runat="server" type="text/javascript">
+function mytimex()
+   {
+   var d=new Date();
+   //ap="am";
+   h=d.getHours();
+   m=d.getMinutes();
+   s=d.getSeconds();
+   //if (h>11) { ap = "pm"; }
+   //if (h>24) { h = h-12; }
+   //if (h>24) { h = 0; }
+   if (h==0) { h = 0; }
+   if (m<10) { m = "0" + m; }
+   if (s<10) { s = "0" + s; }
+   document.getElementById('timeheres').innerHTML=h + ":" + m + ":" + s + " ";
+   t=setTimeout('mytimex()',200);
+   }
+
+</script>
+
+
+<body onLoad="mytimex()" >
+<div id="timeheres"  style="font-size:25px; color:#fff" ></div>
+</body>
